@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrea Mastretta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #888888;
+      --rule: #e8e8e8;
+      --max: 680px;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 64px 24px 120px;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      margin-bottom: 72px;
+    }
+
+    .name {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .social {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .social a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.15s;
+    }
+
+    .social a:hover { border-color: var(--text); }
+
+    .sep { color: var(--rule); }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .section-num {
+      color: var(--rule);
+      margin-right: 12px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 28px;
+    }
+
+    /* ── About ── */
+    .about-text {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .about-text strong { font-weight: 500; }
+
+    /* ── Experience ── */
+    .entry {
+      margin-bottom: 32px;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .entry-date {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .entry-org {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .entry-desc {
+      font-size: 0.875rem;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    .entry-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 24px 0;
+    }
+
+    /* ── Education ── */
+    .edu-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .edu-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .edu-note {
+      font-size: 0.85rem;
+      color: #444;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 80px;
+      font-size: 0.8rem;
+      color: var(--rule);
+    }
+
+    @media (max-width: 500px) {
+      .entry-header { flex-direction: column; gap: 2px; }
+      .entry-date { margin-bottom: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="name">Andrea Mastretta</div>
+      <div class="tagline">Investment Banking Analyst · Centerview Partners · Tech M&amp;A</div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/andrea-mastretta" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="sep">·</span>
+        <span>Menlo Park, CA</span>
+      </div>
+    </header>
+
+    <!-- 01 About -->
+    <section>
+      <div class="section-label"><span class="section-num">01</span>About</div>
+      <hr />
+      <p class="about-text">
+        I'm an investment banking analyst at <strong>Centerview Partners</strong> focused on
+        Technology M&amp;A. I graduated <strong>Cum Laude</strong> from Yale University with a
+        degree in Economics and Statistics, where I also founded the university's only undergraduate
+        venture capital club — <strong>Yale Undergraduate Capital Partners</strong> — which grew to
+        source deals for firms managing over $33B AUM. Before banking, I spent time at
+        <strong>McKinsey &amp; Company</strong> and <strong>Romulus Capital</strong>.
+      </p>
+    </section>
+
+    <!-- 02 Experience -->
+    <section>
+      <div class="section-label"><span class="section-num">02</span>Experience</div>
+      <hr />
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Investment Banking Analyst</div>
+          <div class="entry-date">Jul 2025 – Present</div>
+        </div>
+        <div class="entry-org">Centerview Partners · Menlo Park, CA</div>
+        <div class="entry-desc">Tech M&amp;A advisory.</div>
+      </div>
+
+      <div class="entry-divider"></div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Investment Banking Summer Analyst</div>
+          <div class="entry-date">Jun – Aug 2024</div>
+        </div>
+        <div class="entry-org">Centerview Partners · Menlo Park, CA</div>
+        <div class="entry-desc">Tech M&amp;A advisory.</div>
+      </div>
+
+      <div class="entry-divider"></div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Founder &amp; President</div>
+          <div class="entry-date">Dec 2022 – May 2024</div>
+        </div>
+        <div class="entry-org">Yale Undergraduate Capital Partners · New Haven, CT</div>
+        <div class="entry-desc">
+          Founded the only venture capital club for undergraduates at Yale. YUCP delivers
+          high-quality sourcing and deep, multi-vertical industry insights to firms with an
+          aggregate $33B+ AUM.
+        </div>
+      </div>
+
+      <div class="entry-divider"></div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Business Analyst Intern</div>
+          <div class="entry-date">Jun 2022 – Aug 2023</div>
+        </div>
+        <div class="entry-org">McKinsey &amp; Company · New York, NY</div>
+        <div class="entry-desc">
+          Retail Banking and Payments Group (Sophomore Summer); Global Healthcare Acceleration
+          Group (First Year Summer).
+        </div>
+      </div>
+
+      <div class="entry-divider"></div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Venture Capital Fellow</div>
+          <div class="entry-date">Feb – May 2022</div>
+        </div>
+        <div class="entry-org">Romulus Capital</div>
+        <div class="entry-desc">
+          Selected as 1 of 8 fellows from over 170 applicants worldwide for an immersive
+          apprenticeship providing education, mentorship, and hands-on investment experience.
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Education -->
+    <section>
+      <div class="section-label"><span class="section-num">03</span>Education</div>
+      <hr />
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="edu-title">Yale University</div>
+          <div class="entry-date">2021 – 2025</div>
+        </div>
+        <div class="edu-sub">B.S. Economics and Statistics</div>
+        <div class="edu-note">Cum Laude · Distinction in Major</div>
+      </div>
+
+      <div class="entry-divider"></div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="edu-title">Puebla American School Foundation</div>
+          <div class="entry-date">2017 – 2021</div>
+        </div>
+        <div class="edu-sub">International Baccalaureate Diploma</div>
+        <div class="edu-note">Class Valedictorian · Class President</div>
+      </div>
+    </section>
+
+    <!-- 04 Contact -->
+    <section>
+      <div class="section-label"><span class="section-num">04</span>Contact</div>
+      <hr />
+      <p class="about-text">
+        Reach me on
+        <a href="https://www.linkedin.com/in/andrea-mastretta" target="_blank" rel="noopener"
+          style="color:var(--text);border-bottom:1px solid var(--rule);">LinkedIn</a>.
+      </p>
+    </section>
+
+    <footer>© 2026 Andrea Mastretta</footer>
+
+  </div>
+</body>
+</html>
