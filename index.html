@@ -6,26 +6,27 @@
   <title>Andrea Mastretta</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #ffffff;
-      --text: #1a1a1a;
+      --text: #111111;
       --muted: #888888;
-      --rule: #e8e8e8;
-      --max: 680px;
+      --rule: #e0e0e0;
+      --accent: #3a6644;
+      --max: 700px;
     }
 
-    html { font-size: 16px; }
+    html { font-size: 15px; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
-      padding: 64px 24px 120px;
+      line-height: 1.7;
+      padding: 72px 24px 120px;
     }
 
     .container {
@@ -34,28 +35,30 @@
     }
 
     /* ── Header ── */
-    header {
-      margin-bottom: 72px;
-    }
+    header { margin-bottom: 80px; }
 
     .name {
-      font-size: 1.1rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      margin-bottom: 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
     }
 
     .tagline {
-      font-size: 0.9rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      line-height: 1.6;
     }
 
     .social {
       display: flex;
-      gap: 6px;
+      gap: 8px;
       align-items: center;
-      font-size: 0.85rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
       color: var(--muted);
     }
 
@@ -63,131 +66,226 @@
       color: var(--text);
       text-decoration: none;
       border-bottom: 1px solid var(--rule);
-      transition: border-color 0.15s;
+      padding-bottom: 1px;
+      transition: border-color 0.15s, color 0.15s;
     }
 
-    .social a:hover { border-color: var(--text); }
+    .social a:hover { border-color: var(--text); color: var(--accent); }
 
     .sep { color: var(--rule); }
 
     /* ── Sections ── */
-    section {
-      margin-bottom: 64px;
-    }
+    section { margin-bottom: 72px; }
 
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+    .label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 28px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
-    .section-num {
+    .label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .num {
       color: var(--rule);
-      margin-right: 12px;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin-bottom: 28px;
+      font-weight: 400;
     }
 
     /* ── About ── */
-    .about-text {
-      font-size: 1rem;
+    .about {
+      font-size: 0.975rem;
       font-weight: 300;
-      line-height: 1.75;
+      line-height: 1.85;
       color: var(--text);
     }
 
-    .about-text strong { font-weight: 500; }
+    .about strong { font-weight: 500; }
 
-    /* ── Experience ── */
-    .entry {
-      margin-bottom: 32px;
+    .about a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.15s, color 0.15s;
     }
 
+    .about a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Venture card ── */
+    .venture {
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+
+    .venture:last-child { margin-bottom: 0; }
+
+    .venture-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .venture-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .venture-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .venture-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .venture-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.75;
+    }
+
+    .venture-desc a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .venture-desc a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Experience entries ── */
+    .entry { margin-bottom: 30px; }
     .entry:last-child { margin-bottom: 0; }
 
-    .entry-header {
+    .entry-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 16px;
+      gap: 12px;
       margin-bottom: 2px;
     }
 
     .entry-title {
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
     }
 
     .entry-date {
-      font-size: 0.8rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
       color: var(--muted);
       white-space: nowrap;
       flex-shrink: 0;
     }
 
     .entry-org {
-      font-size: 0.85rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
       color: var(--muted);
       margin-bottom: 6px;
     }
 
     .entry-desc {
       font-size: 0.875rem;
+      font-weight: 300;
       color: #444;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
-    .entry-divider {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 24px 0;
-    }
+    .entry + .entry { padding-top: 24px; border-top: 1px solid var(--rule); }
 
     /* ── Education ── */
     .edu-title {
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
     }
 
     .edu-sub {
-      font-size: 0.85rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .edu-note {
       font-size: 0.85rem;
+      font-weight: 300;
       color: #444;
     }
 
-    /* ── Footer ── */
-    footer {
-      margin-top: 80px;
-      font-size: 0.8rem;
-      color: var(--rule);
+    /* ── Connect ── */
+    .connect-text {
+      font-size: 0.975rem;
+      font-weight: 300;
+      line-height: 1.85;
     }
 
-    @media (max-width: 500px) {
-      .entry-header { flex-direction: column; gap: 2px; }
-      .entry-date { margin-bottom: 2px; }
+    .connect-text a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .connect-text a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--rule);
+      margin-top: 80px;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 48px 20px 80px; }
+      .entry-top, .venture-header { flex-direction: column; gap: 4px; }
+      .venture { padding: 20px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
 
+    <!-- Header -->
     <header>
       <div class="name">Andrea Mastretta</div>
-      <div class="tagline">Investment Banking Analyst · Centerview Partners · Tech M&amp;A</div>
+      <div class="tagline">
+        IB Analyst @ Centerview Partners &nbsp;·&nbsp; Founder &nbsp;·&nbsp; Startup enthusiast
+      </div>
       <div class="social">
         <a href="https://www.linkedin.com/in/andrea-mastretta" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="sep">·</span>
+        <a href="https://www.instagram.com/matchatretta" target="_blank" rel="noopener">Instagram</a>
         <span class="sep">·</span>
         <span>Menlo Park, CA</span>
       </div>
@@ -195,121 +293,146 @@
 
     <!-- 01 About -->
     <section>
-      <div class="section-label"><span class="section-num">01</span>About</div>
-      <hr />
-      <p class="about-text">
-        I'm an investment banking analyst at <strong>Centerview Partners</strong> focused on
-        Technology M&amp;A. I graduated <strong>Cum Laude</strong> from Yale University with a
-        degree in Economics and Statistics, where I also founded the university's only undergraduate
-        venture capital club — <strong>Yale Undergraduate Capital Partners</strong> — which grew to
-        source deals for firms managing over $33B AUM. Before banking, I spent time at
-        <strong>McKinsey &amp; Company</strong> and <strong>Romulus Capital</strong>.
+      <div class="label"><span class="num">01</span> About</div>
+      <p class="about">
+        I'm a builder and finance operator working at the intersection of
+        <strong>technology, capital, and community</strong>. By day I advise on Tech M&amp;A at
+        <strong>Centerview Partners</strong>. By night I think about what it takes to build
+        something people genuinely love.
+      </p>
+      <br />
+      <p class="about">
+        At Yale I founded <strong><a href="https://www.linkedin.com/company/yucp" target="_blank" rel="noopener">Yale Undergraduate Capital Partners</a></strong> — the university's only
+        undergraduate VC club, sourcing deals for firms managing $33B+ AUM. I've spent time at
+        <strong>McKinsey</strong> and <strong>Romulus Capital</strong>, and I've always been drawn
+        to the earliest, most uncertain stages of company-building.
+      </p>
+      <br />
+      <p class="about">
+        Outside the deal table I run creative pop-up experiences under
+        <strong><a href="https://www.instagram.com/matchatretta" target="_blank" rel="noopener">matchatretta</a></strong> —
+        a passion project that started at Yale and turned into a genuine community experiment in
+        bringing founders and builders together over really good matcha.
       </p>
     </section>
 
-    <!-- 02 Experience -->
+    <!-- 02 Ventures -->
     <section>
-      <div class="section-label"><span class="section-num">02</span>Experience</div>
-      <hr />
+      <div class="label"><span class="num">02</span> Ventures</div>
 
-      <div class="entry">
-        <div class="entry-header">
-          <div class="entry-title">Investment Banking Analyst</div>
-          <div class="entry-date">Jul 2025 – Present</div>
+      <div class="venture">
+        <div class="venture-header">
+          <div class="venture-name">matchatretta</div>
+          <div class="venture-tag">active</div>
         </div>
-        <div class="entry-org">Centerview Partners · Menlo Park, CA</div>
-        <div class="entry-desc">Tech M&amp;A advisory.</div>
+        <div class="venture-meta">Co-founder &nbsp;·&nbsp; 2024–present &nbsp;·&nbsp; New Haven, CT → Menlo Park, CA</div>
+        <p class="venture-desc">
+          What started as a late-night idea at Yale became a series of campus pop-ups designed to
+          connect founders, VCs, and builders over ceremonial-grade matcha sourced directly from
+          Uji, Japan. Every serving uses 5g of powder — more than most cafés would dare.
+          The point was never the matcha. It was the room it created.
+          <br /><br />
+          We ran events across Yale, hosted VC networking pop-ups, and built a community around
+          the idea that the best conversations happen when people slow down.
+          Follow along on <a href="https://www.instagram.com/matchatretta" target="_blank" rel="noopener">Instagram</a>.
+        </p>
       </div>
 
-      <div class="entry-divider"></div>
+      <div class="venture">
+        <div class="venture-header">
+          <div class="venture-name">Yale Undergraduate Capital Partners</div>
+          <div class="venture-tag">founded</div>
+        </div>
+        <div class="venture-meta">Founder &amp; President &nbsp;·&nbsp; Dec 2022 – May 2024 &nbsp;·&nbsp; New Haven, CT</div>
+        <p class="venture-desc">
+          Built Yale's only undergraduate venture capital club from scratch. YUCP ran sourcing
+          pipelines and multi-vertical diligence for partner firms with an aggregate $33B+ AUM.
+          We trained undergraduates to think like investors before they ever touched a cap table.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- 03 Experience -->
+    <section>
+      <div class="label"><span class="num">03</span> Experience</div>
 
       <div class="entry">
-        <div class="entry-header">
+        <div class="entry-top">
+          <div class="entry-title">Investment Banking Analyst</div>
+          <div class="entry-date">Jul 2025 – present</div>
+        </div>
+        <div class="entry-org">Centerview Partners &nbsp;·&nbsp; Tech M&amp;A &nbsp;·&nbsp; Menlo Park, CA</div>
+        <div class="entry-desc">Advisory on technology M&amp;A transactions.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-top">
           <div class="entry-title">Investment Banking Summer Analyst</div>
           <div class="entry-date">Jun – Aug 2024</div>
         </div>
-        <div class="entry-org">Centerview Partners · Menlo Park, CA</div>
-        <div class="entry-desc">Tech M&amp;A advisory.</div>
+        <div class="entry-org">Centerview Partners &nbsp;·&nbsp; Tech M&amp;A &nbsp;·&nbsp; Menlo Park, CA</div>
       </div>
 
-      <div class="entry-divider"></div>
-
       <div class="entry">
-        <div class="entry-header">
-          <div class="entry-title">Founder &amp; President</div>
-          <div class="entry-date">Dec 2022 – May 2024</div>
-        </div>
-        <div class="entry-org">Yale Undergraduate Capital Partners · New Haven, CT</div>
-        <div class="entry-desc">
-          Founded the only venture capital club for undergraduates at Yale. YUCP delivers
-          high-quality sourcing and deep, multi-vertical industry insights to firms with an
-          aggregate $33B+ AUM.
-        </div>
-      </div>
-
-      <div class="entry-divider"></div>
-
-      <div class="entry">
-        <div class="entry-header">
+        <div class="entry-top">
           <div class="entry-title">Business Analyst Intern</div>
           <div class="entry-date">Jun 2022 – Aug 2023</div>
         </div>
-        <div class="entry-org">McKinsey &amp; Company · New York, NY</div>
+        <div class="entry-org">McKinsey &amp; Company &nbsp;·&nbsp; New York, NY</div>
         <div class="entry-desc">
-          Retail Banking and Payments Group (Sophomore Summer); Global Healthcare Acceleration
-          Group (First Year Summer).
+          Retail Banking and Payments Group (Sophomore Summer) ·
+          Global Healthcare Acceleration Group (First Year Summer).
         </div>
       </div>
 
-      <div class="entry-divider"></div>
-
       <div class="entry">
-        <div class="entry-header">
+        <div class="entry-top">
           <div class="entry-title">Venture Capital Fellow</div>
           <div class="entry-date">Feb – May 2022</div>
         </div>
         <div class="entry-org">Romulus Capital</div>
         <div class="entry-desc">
-          Selected as 1 of 8 fellows from over 170 applicants worldwide for an immersive
-          apprenticeship providing education, mentorship, and hands-on investment experience.
+          1 of 8 fellows selected from 170+ applicants worldwide. Immersive apprenticeship
+          in sourcing, diligence, and early-stage investing.
         </div>
       </div>
+
     </section>
 
-    <!-- 03 Education -->
+    <!-- 04 Education -->
     <section>
-      <div class="section-label"><span class="section-num">03</span>Education</div>
-      <hr />
+      <div class="label"><span class="num">04</span> Education</div>
 
       <div class="entry">
-        <div class="entry-header">
+        <div class="entry-top">
           <div class="edu-title">Yale University</div>
           <div class="entry-date">2021 – 2025</div>
         </div>
-        <div class="edu-sub">B.S. Economics and Statistics</div>
+        <div class="edu-sub">B.S. Economics &amp; Statistics</div>
         <div class="edu-note">Cum Laude · Distinction in Major</div>
       </div>
 
-      <div class="entry-divider"></div>
-
       <div class="entry">
-        <div class="entry-header">
+        <div class="entry-top">
           <div class="edu-title">Puebla American School Foundation</div>
           <div class="entry-date">2017 – 2021</div>
         </div>
         <div class="edu-sub">International Baccalaureate Diploma</div>
         <div class="edu-note">Class Valedictorian · Class President</div>
       </div>
+
     </section>
 
-    <!-- 04 Contact -->
+    <!-- 05 Connect -->
     <section>
-      <div class="section-label"><span class="section-num">04</span>Contact</div>
-      <hr />
-      <p class="about-text">
-        Reach me on
-        <a href="https://www.linkedin.com/in/andrea-mastretta" target="_blank" rel="noopener"
-          style="color:var(--text);border-bottom:1px solid var(--rule);">LinkedIn</a>.
+      <div class="label"><span class="num">05</span> Connect</div>
+      <p class="connect-text">
+        I'm always interested in talking to founders, investors, and operators thinking
+        about what's next. Reach me on
+        <a href="https://www.linkedin.com/in/andrea-mastretta" target="_blank" rel="noopener">LinkedIn</a>
+        or find matchatretta on
+        <a href="https://www.instagram.com/matchatretta" target="_blank" rel="noopener">Instagram</a>.
       </p>
     </section>
 
